@@ -54,6 +54,7 @@ message.innerHTML = 'we use cookies for improved functionality and analytics.<bu
 
 header.append(message); 
 
+/*
 //Delete Elements - THIS STILL DOESNT WORK!!!
 document
 .querySelector('btn--close--cookie')
@@ -75,6 +76,24 @@ btnScrollTo.addEventListener('click', function(e){
     behaviour: 'smooth',
   });
 });
+*/
+
+//Event propagation - Generating random colors on link click
+
+const randomInt = (min, max) => 
+  Math.floor(Math.random() * (max - min + 1) + min);
+  const randomColor = () => `rgb(${randomInt(0,225)},${randomInt(0,225)},${randomInt(0,225)})`;
+
+  document.querySelector('.nav__link').addEventListener('click', function (e){
+    this.style.backgroundColor = randomColor();
+  });
+  document.querySelector('.nav__links').addEventListener('click', function (e){
+    this.style.backgroundColor = randomColor();
+  });
+  document.querySelector('.nav').addEventListener('click', function (e){
+    this.style.backgroundColor = randomColor();
+  });
+ 
 
 
 
